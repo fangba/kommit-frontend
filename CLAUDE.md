@@ -11,7 +11,7 @@ kommit-frontend/
 ├── .claude/
 │   ├── agents/             # agents invocables (code-reviewer, test-planner...)
 │   ├── hooks/              # scripts déclenchés par les hooks (ex. vérification des imports)
-│   ├── rules/              # règles propres au frontend (pnpm, ui, tests, périmètre...)
+│   ├── rules/              # règles propres au frontend (architecture, pnpm, ui, tests, périmètre...)
 │   ├── skills/             # skills invocables (write-ui, write-code, open-pr, merge-pr...)
 │   └── settings.json       # réglages Claude Code du repo
 ├── .vscode/
@@ -22,9 +22,15 @@ kommit-frontend/
 ├── public/
 │   └── favicon.svg
 ├── src/
-│   ├── components/ui/      # composants shadcn/ui (Base UI)
-│   ├── lib/                # utilitaires (ex. cn())
-│   ├── App.tsx
+│   ├── components/
+│   │   ├── ui/             # composants shadcn/ui génériques (Base UI), réutilisés par 2+ écrans
+│   │   └── pages/          # un dossier par écran, avec ses morceaux spécifiques (ex. Diagnostic/)
+│   ├── lib/
+│   │   ├── api/            # le seul endroit qui parle au réseau (ex. health.ts)
+│   │   └── utils.ts        # cn() — emplacement shadcn, ne pas déplacer
+│   ├── types/
+│   │   └── apiContract.ts  # contrat d'API partagé avec le backend
+│   ├── App.tsx             # assemblage : providers + routes, aucun affichage
 │   ├── index.css           # entrée Tailwind
 │   └── main.tsx            # point d'entrée : monte l'app React
 ├── CLAUDE.md               # ce fichier
