@@ -1,5 +1,7 @@
+import DiagnosticPage from '@/components/pages/Diagnostic/DiagnosticPage'
+
 function App() {
-  return <div />
+  return <DiagnosticPage />
 }
 
 export default App
