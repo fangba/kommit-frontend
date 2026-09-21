@@ -1,19 +1,4 @@
 // ─────────────────────────────────────────────────────
-// SANTÉ (KOM-04)
-// ─────────────────────────────────────────────────────
-// Endpoints de diagnostic, indépendants du contrat métier ci-dessous.
-
-/** GET /health — le serveur répond. */
-export type HealthStatus = {
-  status: "ok"
-  uptime: number
-  timestamp: string
-}
-
-/** GET /db-health — la base de données répond (ou pas, `status: 'error'` sur 503). */
-export type DbHealthStatus = { status: "ok"; latency: number } | { status: "error" }
-
-// ─────────────────────────────────────────────────────
 // ERREURS
 // ─────────────────────────────────────────────────────
 // Le back NE laisse PAS passer les erreurs brutes de Better Auth ni celles du
