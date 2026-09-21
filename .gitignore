@@ -1,0 +1,19 @@
+# DEPENDANCES & BUILD
+node_modules/
+dist/
+dist-ssr/
+build/
+
+# ENV
+.env
+.env.*
+!.env.example
+
+# LOGS
+*.log
+
+# OS
+.DS_Store
+
+# EDITEUR
+*.local
