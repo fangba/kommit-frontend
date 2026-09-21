@@ -1,5 +1,14 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import ConnectionCheckPage from '@/components/pages/ConnectionCheck/ConnectionCheckPage'
+
+const queryClient = new QueryClient()
+
 function App() {
-  return <main className="min-h-screen" />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ConnectionCheckPage />
+    </QueryClientProvider>
+  )
 }
 
 export default App
